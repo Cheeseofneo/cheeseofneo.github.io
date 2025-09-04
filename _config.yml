@@ -27,8 +27,8 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Ars longa, vita brevis"
   location         : "China,Beijing"
-  employer         : 
-  uri              : # URL
+  employer         : "Tsinghua University"
+  uri              : https://cheeseofneo.github.io
   email            : "neowang311@gmail.com" 
 
   # Academic websites
