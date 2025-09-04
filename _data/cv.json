@@ -1,9 +1,9 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "WANG Zheng",
+    "email": "neowang@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
+    "website": " https://cheeseofneo.github.io/",
     "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
     "location": {
       "address": "",
@@ -32,112 +32,78 @@
   },
   "work": [],
   "education": [
-    {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
-      "gpa": null,
-      "courses": []
-    }
+      {
+        "institution": "University of Tokyo",
+        "area": "Exchange Student",
+        "studyType": "[Takeuchi Lab](https://co-design.t.u-tokyo.ac.jp/)",
+        "startDate": "2022",
+        "endDate": "2025",
+        "gpa": 3.82/4.0,
+        "courses": []
+      },
+      {
+        "institution": "Tsinghua University",
+        "area": "M.S. in Dept.Electrical Engineering",
+        "studyType": "",
+        "startDate": "2022",
+        "endDate": "2025",
+        "gpa": 3.82/4.0,
+        "courses": []
+      },
+      {
+        "institution": "GitHub University",
+        "area": "B.S. in Dept.Control & Measurement",
+        "studyType": "",
+        "startDate": "2018",
+        "endDate": "2022",
+        "gpa": 3.72/4.0,
+        "courses": []
+      }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
-  "references": [],
+  "languages": [Chinese(Mandarin and Cantonese), English, Janpanese],
+  "Internship": [
+      {
+        "institution": "University of Tokyo",
+        "area": "Exchange Student",
+        "studyType": "[Takeuchi Lab](https://co-design.t.u-tokyo.ac.jp/)",
+        "startDate": "2022",
+        "endDate": "2025",
+        "gpa": 3.82/4.0,
+        "courses": []
+      },
+      {
+        "institution": "Tsinghua University",
+        "area": "M.S. in Dept.Electrical Engineering",
+        "studyType": "",
+        "startDate": "2022",
+        "endDate": "2025",
+        "gpa": 3.82/4.0,
+        "courses": []
+      },
+      {
+        "institution": "GitHub University",
+        "area": "B.S. in Dept.Control & Measurement",
+        "studyType": "",
+        "startDate": "2018",
+        "endDate": "2022",
+        "gpa": 3.72/4.0,
+        "courses": []
+      }
+  ],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "A fast and precise autofocus method using linear array CCD",
+      "publisher": "SPIE",
+      "releaseDate": "2024-11-20",
+      "website": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13241/132411T/A-fast-and-precise-autofocus-method-using-linear-array-CCD/10.1117/12.3036393.short",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
-    },
-    {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
-    }
-  ],
-  "presentations": [
-    {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
-      "description": ""
-    }
-  ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "name": "Quantization Meets Reasoning: Exploring LLM Low-Bit Quantization Degradation for Mathematical Reasoning",
+      "publisher": "Arxiv",
+      "releaseDate": "2025-01-06",
+      "website": "https://arxiv.org/abs/2501.03035",
+      "summary": ""
     }
   ],
   "portfolio": [
