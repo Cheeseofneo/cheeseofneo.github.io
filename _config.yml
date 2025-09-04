@@ -14,7 +14,7 @@ title_separator          : "-"
 name                     : "WANG Zheng"
 description              : 
 url                      : https://cheeseofneo.github.io/ 
-repository               : "Cheeseofneo/NeoBlog"
+repository               : "Cheeseofneo/cheeseofneo.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -27,7 +27,7 @@ author:
   bio              : "Ars longa, vita brevis"
   location         : "China,Beijing"
   employer         : "Tsinghua University"
-  uri              :
+  uri              : https://cheeseofneo.github.io/ 
   email            : "neowang311@gmail.com" 
 
   # Academic websites
