@@ -7,25 +7,66 @@ author_profile: true
 
 {% include base_path %}
 
-{% assign sorted_projects = site.projects | sort: 'start' | reverse %}
-{% for project in sorted_projects %}
-  <article class="archive-item">
-    <h3>{{ project.title }}</h3>
-    {% if project.period %}
-      <p><em>{{ project.period }}</em></p>
-    {% endif %}
-    <p>{{ project.excerpt }}</p>
+{% if site.project_category %}
+  {% for category in site.project_category %}
+    {% assign title_shown = false %}
+    {% assign sorted_projects = site.projects | sort: 'start' | reverse %}
+    {% for project in sorted_projects %}
+      {% if project.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
 
-    {% if project.highlights %}
-      <ul>
-        {% for item in project.highlights %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-    {% if project.image %}
-      <img src="{{ project.image }}" alt="{{ project.title }}" style="max-width:200px;">
-    {% endif %}
-  </article>
-{% endfor %}
+      <article class="archive-item">
+        <h3>{{ project.title }}</h3>
+        {% if project.period %}
+          <p><em>{{ project.period }}</em></p>
+        {% endif %}
+        <p>{{ project.excerpt }}</p>
+
+        {% if project.highlights %}
+          <ul>
+            {% for item in project.highlights %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if project.image %}
+          <img src="{{ project.image }}" alt="{{ project.title }}" style="max-width:250px; margin-top:0.5rem;">
+        {% endif %}
+
+        <a href="{{ project.url | relative_url }}">Read more</a>
+      </article>
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% assign sorted_projects = site.projects | sort: 'start' | reverse %}
+  {% for project in sorted_projects %}
+    <article class="archive-item">
+      <h3>{{ project.title }}</h3>
+      {% if project.period %}
+        <p><em>{{ project.period }}</em></p>
+      {% endif %}
+      <p>{{ project.excerpt }}</p>
+
+      {% if project.highlights %}
+        <ul>
+          {% for item in project.highlights %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if project.image %}
+        <img src="{{ project.image }}" alt="{{ project.title }}" style="max-width:250px; margin-top:0.5rem;">
+      {% endif %}
+
+      <a href="{{ project.url | relative_url }}">Read more</a>
+    </article>
+  {% endfor %}
+{% endif %}
 

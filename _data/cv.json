@@ -4,7 +4,7 @@
     "email": "neowang@gmail.com",
     "phone": "",
     "website": " https://cheeseofneo.github.io/",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "summary": "",
     "location": {
       "address": "",
       "postalCode": "",
@@ -38,7 +38,7 @@
         "studyType": "[Takeuchi Lab](https://co-design.t.u-tokyo.ac.jp/)",
         "startDate": "2022",
         "endDate": "2025",
-        "gpa": 3.82/4.0,
+        "gpa": "3.82/4.0",
         "courses": []
       },
       {
@@ -47,7 +47,7 @@
         "studyType": "",
         "startDate": "2022",
         "endDate": "2025",
-        "gpa": 3.82/4.0,
+        "gpa": "3.82/4.0",
         "courses": []
       },
       {
@@ -56,40 +56,11 @@
         "studyType": "",
         "startDate": "2018",
         "endDate": "2022",
-        "gpa": 3.72/4.0,
+        "gpa": 3.72,
         "courses": []
       }
   ],
-  "languages": [Chinese(Mandarin and Cantonese), English, Janpanese],
-  "Internship": [
-      {
-        "institution": "University of Tokyo",
-        "area": "Exchange Student",
-        "studyType": "[Takeuchi Lab](https://co-design.t.u-tokyo.ac.jp/)",
-        "startDate": "2022",
-        "endDate": "2025",
-        "gpa": 3.82/4.0,
-        "courses": []
-      },
-      {
-        "institution": "Tsinghua University",
-        "area": "M.S. in Dept.Electrical Engineering",
-        "studyType": "",
-        "startDate": "2022",
-        "endDate": "2025",
-        "gpa": 3.82/4.0,
-        "courses": []
-      },
-      {
-        "institution": "GitHub University",
-        "area": "B.S. in Dept.Control & Measurement",
-        "studyType": "",
-        "startDate": "2018",
-        "endDate": "2022",
-        "gpa": 3.72/4.0,
-        "courses": []
-      }
-  ],
+  "languages": ["Chinese(Mandarin and Cantonese)", "English", "Japanese"],
   "publications": [
     {
       "name": "A fast and precise autofocus method using linear array CCD",
