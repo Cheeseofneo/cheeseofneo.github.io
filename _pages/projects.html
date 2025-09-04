@@ -1,0 +1,30 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+{% include base_path %}
+
+{% if site.project_category %}
+  {% for category in site.project_category %}
+    {% assign title_shown = false %}
+    {% for project in site.projects reversed %}
+      {% if project.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      <article class="archive-item">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.excerpt }}</p>
+        {% if project.image %}
+          <img src="{{ project.image }}" alt="{{ project.title }}" style="max-width:200px;">
+        {% endif %}
+      </article>
+    {% endfor %}
+  {% endfor %}
+{% endif %}
