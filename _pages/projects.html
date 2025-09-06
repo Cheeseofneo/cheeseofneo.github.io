@@ -1,11 +1,11 @@
 ---
-layout: archive
+layout: 
 title: "Projects"
 permalink: /projects/
 author_profile: true
 ---
 
-{% include base_path %}
+<!-- {% include base_path %}
 
 {% if site.project_category %}
   {% for category in site.project_category %}
@@ -68,5 +68,30 @@ author_profile: true
       <a href="{{ project.url | relative_url }}">Read more</a>
     </article>
   {% endfor %}
-{% endif %}
+{% endif %} -->
+
+{% include base_path %}
+
+<ul>
+{% for project in site.projects reversed %}
+  <li>
+    <strong>{{ project.title }}</strong><br>
+    <span>{{ project.period }}</span><br>
+    {{ project.excerpt }}<br>
+    {% if project.highlights %}
+      <ul>
+        {% for h in project.highlights %}
+          <li>{{ h }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if project.links %}
+      {% for link in project.links %}
+        [<a href="{{ link.url }}">{{ link.label }}</a>]
+      {% endfor %}
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+
 
