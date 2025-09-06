@@ -72,23 +72,29 @@ author_profile: true
 
 {% include base_path %}
 
-<ul>
+<ul class="pub-list">
 {% for project in site.projects reversed %}
   <li>
     <strong>{{ project.title }}</strong><br>
-    <span>{{ project.period }}</span><br>
-    {{ project.excerpt }}<br>
-    {% if project.highlights %}
-      <ul>
-        {% for h in project.highlights %}
-          <li>{{ h }}</li>
-        {% endfor %}
-      </ul>
+    {% if project.period %}
+      <span>{{ project.period }}</span><br>
     {% endif %}
+    {{ project.excerpt }}<br>
+
+    {% if project.highlights %}
+      <div class="highlights">
+        {% for h in project.highlights %}
+          {{ h }}<br>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     {% if project.links %}
-      {% for link in project.links %}
-        [<a href="{{ link.url }}">{{ link.label }}</a>]
-      {% endfor %}
+      <div class="links">
+        {% for link in project.links %}
+          [<a href="{{ link.url }}">{{ link.label }}</a>]
+        {% endfor %}
+      </div>
     {% endif %}
   </li>
 {% endfor %}
