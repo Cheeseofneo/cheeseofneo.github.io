@@ -13,7 +13,7 @@ title                    : "Neo's Blog"
 title_separator          : "-"
 name                     : "WANG Zheng"
 description              : "Scriptman"
-url                      : 
+url                      : https://cheeseofneo.github.io/
 repository               : 
 
 # Site Author - The following control what appear as part of the author content on the side bar.
@@ -23,11 +23,11 @@ author:
   # Biographic information
   avatar           : "1.jpg"
   name             : "WANG Zheng"
-  pronouns         : # example: "she/her"  
+  pronouns         : "he/his"
   bio              : "Ars longa, vita brevis"
   location         : "China,Beijing"
   employer         : "Tsinghua University"
-  uri              :
+  uri              : https://cheeseofneo.github.io/
   email            : "neowang311@gmail.com" 
 
   # Academic websites
