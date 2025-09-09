@@ -2,14 +2,14 @@
   "basics": {
     "name": "WANG Zheng",
     "email": "neowang@gmail.com",
-    "phone": "",
+    "phone": "13931805565",
     "website": " https://cheeseofneo.github.io/",
     "summary": "",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
+      "city": "Beijing",
+      "countryCode": "China",
       "region": ""
     },
     "profiles": [
@@ -17,16 +17,6 @@
         "network": "Google Scholar",
         "username": "",
         "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
-      },
-      {
-        "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
       }
     ]
   },
@@ -36,9 +26,9 @@
         "institution": "University of Tokyo",
         "area": "Exchange Student",
         "studyType": "[Takeuchi Lab](https://co-design.t.u-tokyo.ac.jp/)",
-        "startDate": "2022",
+        "startDate": "2024",
         "endDate": "2025",
-        "gpa": "3.82/4.0",
+        "gpa": "",
         "courses": []
       },
       {
@@ -56,11 +46,14 @@
         "studyType": "",
         "startDate": "2018",
         "endDate": "2022",
-        "gpa": 3.72,
+        "gpa": "3.72/4.0",
         "courses": []
       }
   ],
-  "languages": ["Chinese(Mandarin and Cantonese)", "English", "Japanese"],
+  "languages": [
+    {"language":"Chinese(Mandarin and Cantonese), English, Japanese"}
+  ],
+
   "publications": [
     {
       "name": "A fast and precise autofocus method using linear array CCD",
@@ -75,15 +68,6 @@
       "releaseDate": "2025-01-06",
       "website": "https://arxiv.org/abs/2501.03035",
       "summary": ""
-    }
-  ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
     }
   ]
 }
