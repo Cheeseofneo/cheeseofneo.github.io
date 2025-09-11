@@ -56,6 +56,3 @@ Honor
 - Membership of China Instrument and Control Society(2022)
 - Tsinghua College Scholarship(2024)
 - **NVIDIA AI-Agent Group(2024)**
-
-
-
