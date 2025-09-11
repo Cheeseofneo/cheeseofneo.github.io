@@ -1,6 +1,7 @@
 ---
 title: LeetCode Summary
-date: 2023-08-18 16:04:34
+date: 2023-08-18 
+permalink: /posts/2025/09/post1/
 tags:
 ---
 

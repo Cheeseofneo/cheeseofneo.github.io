@@ -1,6 +1,7 @@
 ---
-title: 深浅拷贝与引用拷贝的区别
+title: Deep Copy
 date: 2024-01-13
+permalink: /posts/2025/09/post3/
 tags:
 ---
 
