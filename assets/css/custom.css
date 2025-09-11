@@ -1,0 +1,22 @@
+.project-header {
+  display: flex;                  /* 把标题和时间放到同一行 */
+  justify-content: space-between; /* 左右两端对齐 */
+  align-items: center;            /* 垂直居中 */
+}
+
+.project-header .icon {
+  margin-right: 0.5em;            /* 图标和文字之间留点空隙 */
+  font-size: 1.1em;               /* 图标稍微大一点 */
+}
+
+.project-header .title {
+  font-weight: bold;              /* 标题加粗 */
+  font-size: 1.05em;              /* 字号稍微大一点 */
+  flex-grow: 1;                   /* 占据剩余空间 */
+}
+
+.project-header .period {
+  color: #777;                    /* 字体颜色偏灰 */
+  font-size: 0.9em;               /* 字号小一点 */
+  font-style: italic;             /* 斜体 */
+}

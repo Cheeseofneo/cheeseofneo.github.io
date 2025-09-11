@@ -6,33 +6,43 @@ author_profile: true
 ---
 
 {% include base_path %}
+{% assign categories = site.project_category | default: "" %}
 
-<ul class="pub-list">
-{% for project in site.projects reversed %}
-  <li>
-    <strong>{{ project.title }}</strong><br>
-    {% if project.period %}
-      <span>{{ project.period }}</span><br>
-    {% endif %}
-    {{ project.excerpt }}<br>
-
-    {% if project.highlights %}
-      <div class="highlights">
-        {% for h in project.highlights %}
-          {{ h }}<br>
-        {% endfor %}
-      </div>
-    {% endif %}
-
-    {% if project.links %}
-      <div class="links">
-        {% for link in project.links %}
-          [<a href="{{ link.url }}">{{ link.label }}</a>]
-        {% endfor %}
-      </div>
-    {% endif %}
-  </li>
-{% endfor %}
-</ul>
-
+{% if categories %}
+  {% for category in categories %}
+    <h2>{{ category[1].title }}</h2>
+    <ul class="pub-list">
+      {% for project in site.projects reversed %}
+        {% if project.category == category[0] %}
+          <li>
+            <div class="project-header">
+              <span class="icon">📌</span>
+              <strong class="title">{{ project.title }}</strong>
+              {% if project.period %}<span class="period">{{ project.period }}</span>{% endif %}
+            </div>
+            {{ project.excerpt }}<br>
+            {% if project.highlights %}
+              <div class="highlights">
+                {% for h in project.highlights %}
+                  • {{ h }}<br>
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% if project.links %}
+              <div class="links">
+                {% for link in project.links %}
+                  [<a href="{{ link.url }}">{{ link.label }}</a>]
+                {% endfor %}
+              </div>
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
 
