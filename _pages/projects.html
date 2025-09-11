@@ -6,7 +6,6 @@ permalink: /projects/
 ---
 
 {% include base_path %}
-{% assign categories = site.project_category%}
 
 {% if site.project_category %}
   {% for category in site.project_category %}
@@ -41,7 +40,7 @@ permalink: /projects/
     </ul>
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
+  {% for post in site.projects reversed %}
     {% include archive-single.html %}
   {% endfor %}
 {% endif %}
