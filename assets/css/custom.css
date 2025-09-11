@@ -1,6 +1,6 @@
 .project-header {
-  display: flex;                  /* 把标题和时间放到同一行 */
-  justify-content: space-between; /* 左右两端对齐 */
+  display: flex;                  
+  justify-content: space-between; 
   align-items: center;            /* 垂直居中 */
 }
 

@@ -1,7 +1,7 @@
 ---
 title: “Mingw+VSCode使用matplotlibcpp库”
 date: 2024-01-02 17:27:40
-permalink:/posts/2024/
+permalink: /posts/2025/09/post2/
 ---
 ### 背景
 在C++中常需要处理数据并进行可视化，而标准库中并没有提供绘图的工具，因此需要借助外部库来完成。目前来看Matplotlibcpp实现较为容易，因为是调用python库的API来完成的。本文讲述使用Vscode+MIngw的C++开发环境下如何使用Matplotlib库。
