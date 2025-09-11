@@ -23,7 +23,7 @@ author_profile: true
             {% if project.highlights %}
               <div class="highlights">
                 {% for h in project.highlights %}
-                  • {{ h }}<br>
+                   {{ h }}<br>
                 {% endfor %}
               </div>
             {% endif %}
@@ -40,8 +40,32 @@ author_profile: true
     </ul>
   {% endfor %}
 {% else %}
-  {% for post in site.projects reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <ul class="pub-list">
+    {% for project in site.projects reversed %}
+      <li>
+        <strong>{{ project.title }}</strong>
+        {% if project.period %}
+          <span>{{ project.period }}</span><br>
+        {% endif %}
+        {{ project.excerpt }}<br>
+
+        {% if project.highlights %}
+          <div class="highlights">
+            {% for h in project.highlights %}
+              {{ h }}<br>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if project.links %}
+          <div class="links">
+            {% for link in project.links %}
+              [<a href="{{ link.url }}">{{ link.label }}</a>]
+            {% endfor %}
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 {% endif %}
 
