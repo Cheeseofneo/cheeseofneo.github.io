@@ -23,7 +23,7 @@ author:
   # Biographic information
   avatar           : "1.jpg"
   name             : "WANG Zheng"
-  pronouns         : "he/his"
+  pronouns         : ""
   bio              : "Ars longa, vita brevis"
   location         : "China,Beijing"
   employer         : "Tsinghua University"
@@ -36,9 +36,9 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=v2buxrUAAAAJ&hl=en"
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : 
+  orcid            : # URL
   semantic         : # URL
-  pubmed           : 
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
 
@@ -91,13 +91,13 @@ project_category:
   research:
     title: "Research"
   internship:
-    title: "Internships"
+    title: "Internship"
   competition:
-    title: "Competitions"
+    title: "Competition"
 
 
 # Site Settings
-teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
 future                   : true
