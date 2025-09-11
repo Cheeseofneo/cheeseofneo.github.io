@@ -1,7 +1,7 @@
 .project-header {
   display: flex;                  
   justify-content: space-between; 
-  align-items: center;            /* 垂直居中 */
+  align-items: center;            
 }
 
 .project-header .icon {
