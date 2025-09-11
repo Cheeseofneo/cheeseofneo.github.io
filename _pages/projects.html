@@ -8,8 +8,8 @@ permalink: /projects/
 {% include base_path %}
 {% assign categories = site.project_category%}
 
-{% if categories %}
-  {% for category in categories %}
+{% if site.project_category %}
+  {% for category in site.project_category %}
     <h2>{{ category[1].title }}</h2>
     <ul class="pub-list">
       {% for project in site.projects reversed %}
