@@ -88,11 +88,11 @@ publication_category:
 
 # Projects Category
 project_category:
-  research:
+  Research:
     title: "Research"
-  internship:
+  Internship:
     title: "Internship"
-  competition:
+  Competition:
     title: "Competition"
 
 
