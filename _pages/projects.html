@@ -12,30 +12,7 @@ author_profile: true
     <h2>{{ category[1].title }}</h2>
     <ul class="pub-list">
       {% for project in site.projects reversed %}
-        {% if project.category == category[0] %}
-          <li>
-            <!-- <div class="project-header"> -->
-            <span class="icon">📌</span>
-            <strong class="title">{{ project.title }}</strong>
-            {% if project.period %}<span class="period">{{ project.period }}</span>{% endif %}
-            <!-- </div> -->
-            {{ project.excerpt }}<br>
-            {% if project.highlights %}
-              <div class="highlights">
-                {% for h in project.highlights %}
-                   {{ h }}<br>
-                {% endfor %}
-              </div>
-            {% endif %}
-            {% if project.links %}
-              <div class="links">
-                {% for link in project.links %}
-                  [<a href="{{ link.url }}">{{ link.label }}</a>]
-                {% endfor %}
-              </div>
-            {% endif %}
-          </li>
-        {% endif %}
+        <li>test</li>
       {% endfor %}
     </ul>
   {% endfor %}

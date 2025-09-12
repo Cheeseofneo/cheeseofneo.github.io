@@ -6,6 +6,7 @@ start: Oct 2024
 end: Mar 2025
 period: "Oct 2024 – Mar 2025"
 image: "images/1.jpg"
+permalink: /projects/proj1
 excerpt: "Research on multisensor perception models and BEV2Instance optimization."
 highlights:
     - Accelerated the diffusion process by adopting an aggressive quantization scheme (W1A1) to minimize memory footprint, while simultaneously guiding the model to learn more generalizable image representations.
