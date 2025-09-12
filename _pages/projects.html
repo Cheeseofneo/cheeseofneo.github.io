@@ -13,7 +13,6 @@ author_profile: true
     <ul class="pub-list">
       {% for project in site.projects reversed %}
         {% if project.category == category[0] %}
-          <li>{{ project.title }} {{ project.category }}</li>
           <li>
             <div class="project-header">
                 <span class="icon">📌</span>
@@ -24,7 +23,7 @@ author_profile: true
             {% if project.highlights %}
               <div class="highlights">
                 {% for h in project.highlights %}
-                   {{ h }}<br>
+                  - {{ h }}<br>
                 {% endfor %}
               </div>
             {% endif %}
