@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a researcher with a background in AI & EE, with a particular interest in multi-modal learning. My current work focuses on exploring unified feature representations across modalities and scales, as well as frequency-aware approaches for robust visual perception.
+I am a researcher with a background in CS & EE, with a particular interest in AIGC. My current work focuses on exploring unified feature representations across modalities, efficient diffusion theory and PEFT of multimodal models.
 
-I am actively seeking opportunities to pursue a Ph.D. position and engage in Research Assistant roles where I can contribute to projects in computer vision, machine learning, and related AI fields. I am highly motivated to collaborate with leading researchers and further advance my expertise in representation learning.
+I am actively seeking opportunities to pursue a **Ph.D.** position and **Research Assistant** where I can contribute to projects in computer vision, machine learning, and related AI fields. I am highly motivated to collaborate with leading researchers and further advance my expertise in representation learning.
 
 Education
 ========
