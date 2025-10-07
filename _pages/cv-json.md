@@ -13,3 +13,8 @@ redirect_from:
 <script>
   window.location.href = "{{ base_path }}/files/cv.pdf";
 </script>
+
+<p style="text-align: center; margin-top: 50px;">
+  If the PDF doesn't load automatically, 
+  <a href="{{ base_path }}/files/cv.pdf">click here to view my CV</a>.
+</p>
