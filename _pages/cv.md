@@ -28,6 +28,7 @@ Education
 
 Internship
 ============
+
 - **Baidu, Beijing, China** — *AI Research Intern, Team Apollo*  
   *July 2024 – Oct 2024*  
   - For multisensor perception model, proposed an infrastructure of model fusion based on shared weights and backbone fusion. Also conducted a cross-training strategy for multi-object detection and utilized distillation to compensate accuracy.  
@@ -38,17 +39,18 @@ Internship
   - Designed the timestamp synchronization architecture of the ADAS system, and constructed a simulated signal generator in the signal simulation platform, which involved validating signal pathways and creating abnormal signals.  
   - Developed a testbench-board verification platform based on SOMEIP for resource scheduling of hardware, ensuring signal accuracy and communication correctness in high-concurrency scenarios.  
 
-
 Other Experience
 ============
+
 - **ICM 2021, Finalist Award (Top 1%)**  
   *Jan 2020 – Mar 2020*  
   - Proposed PRE (Page-Rank Entropy) model vector network of musicians and quantified influence of musicians by node weights from time-span and genre-span perspectives.  
   - Constructed local and global similarity evaluation model based on cosine similarity of multi-dimensional eigenvectors extracted by PCA. Utilized k-means clustering to classify the significance of eigens between and within genres.  
   - Adopted sliding window automatic regression model as a time series forecasting method on main eigens to predict the long- and short-term development trends of musical genres.  
 
-Honor
+Honors
 ======
+
 - Liu Bao Scholarship(2019)
 - Andon Trust(2020)
 - Merit Student(2021)
