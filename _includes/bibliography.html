@@ -1,0 +1,22 @@
+{% include base_path %}
+
+{% for pub in site.bibliography %}
+  <div class="pub-card">
+    <div class="pub-left">
+      {% if pub.preview %}
+        <img src="{{ '/images/' | append: pub.preview | relative_url }}" alt="{{ pub.title }}" class="pub-thumb">
+      {% endif %}
+      {% if pub.abbr %}
+        <span class="pub-tag">{{ pub.abbr }}</span>
+      {% endif %}
+    </div>
+    <div class="pub-right">
+      <strong>{{ pub.title }}</strong><br>
+      <em>{{ pub.author }}</em><br>
+      <span class="pub-venue">{{ pub.booktitle }} {{ pub.year }}</span><br>
+      {% if pub.html %}
+        <a href="{{ pub.html }}" class="pub-link">[HTML]</a>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}

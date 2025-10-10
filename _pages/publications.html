@@ -11,7 +11,7 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
+<!-- New style rendering if publication categories are defined
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
     {% assign title_shown = false %}
@@ -30,7 +30,116 @@ author_profile: true
   {% for post in site.publications reversed %}
     {% include archive-single.html %}
   {% endfor %}
-{% endif %}
+{% endif %} -->
 
 
+<style>
+.publication-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
 
+.pub-thumbnail {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+}
+
+.pub-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.pub-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #0066cc;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.pub-content {
+  flex: 1;
+}
+
+.pub-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.pub-authors {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 15px;
+}
+
+.pub-venue {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.pub-links a {
+  display: inline-block;
+  padding: 6px 16px;
+  margin-right: 10px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.pub-links a:hover {
+  background: #333;
+  color: white;
+}
+
+.year-header {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: right;
+  margin: 40px 0 30px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #333;
+}
+</style>
+
+<h2 class="year-header">2025</h2>
+
+{% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+{% for post in sorted_pubs %}
+  {% if post.date contains '2025' %}
+  <div class="publication-item">
+    <div class="pub-thumbnail" style="position: relative;">
+      {% if post.venue_short %}
+      <div class="pub-badge">{{ post.venue_short }}</div>
+      {% endif %}
+      <img src="{{ post.thumbnail | default: '/images/default-pub.jpg' }}" alt="Thumbnail">
+    </div>
+    <div class="pub-content">
+      <div class="pub-title">{{ post.title }}</div>
+      <div class="pub-authors">{{ post.authors }}</div>
+      <div class="pub-venue">{{ post.venue }} {{ post.date | date: "%Y" }}</div>
+      <div class="pub-links">
+        {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
+        {% if post.html %}<a href="{{ post.html }}">HTML</a>{% endif %}
+        {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
