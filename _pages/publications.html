@@ -32,7 +32,6 @@ author_profile: true
   {% endfor %}
 {% endif %} -->
 
-
 <style>
 .publication-item {
   display: flex;
@@ -117,14 +116,13 @@ author_profile: true
   border-bottom: 2px solid #333;
 }
 </style>
+
 {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
 {% assign years = sorted_pubs | map: 'date' | map: 'year' | uniq %}
 
 {% for year in years %}
     {% assign year_string = year | date: "%Y" %}
-
     <h2 class="year-header">{{ year_string }}</h2>
-
     {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
     {% for post in sorted_pubs %}
     {% if post.date contains year_string %}
@@ -133,8 +131,7 @@ author_profile: true
         {% if post.venue_short %}
         <div class="pub-badge">{{ post.venue_short }}</div>
         {% endif %}
-        <img src="{{ base_path }}{{ post.thumbnail }}" alt="Thumbnail" 
-            onerror="this.src='{{ base_path }}/images/default-pub.jpg'">
+        <img src="{{ base_path }}{{ post.thumbnail }}" alt="Thumbnail">
         </div>
         <div class="pub-content">
         <div class="pub-title">{{ post.title }}</div>
