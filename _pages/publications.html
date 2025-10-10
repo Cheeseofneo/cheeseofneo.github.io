@@ -117,29 +117,35 @@ author_profile: true
   border-bottom: 2px solid #333;
 }
 </style>
-
-<h2 class="year-header">2025</h2>
-
 {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
-{% for post in sorted_pubs %}
-  {% if post.date contains '2025' %}
-  <div class="publication-item">
-    <div class="pub-thumbnail" style="position: relative;">
-      {% if post.venue_short %}
-      <div class="pub-badge">{{ post.venue_short }}</div>
-      {% endif %}
-      <img src="{{ post.thumbnail | default: '/images/default-pub.jpg' }}" alt="Thumbnail">
+{% assign years = sorted_pubs | map: 'date' | map: 'year' | uniq %}
+
+{% for year in years %}
+    {% assign year_string = year | date: "%Y" %}
+
+    <h2 class="year-header">{{ year_string }}</h2>
+
+    {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+    {% for post in sorted_pubs %}
+    {% if post.date contains year_string %}
+    <div class="publication-item">
+        <div class="pub-thumbnail" style="position: relative;">
+        {% if post.venue_short %}
+        <div class="pub-badge">{{ post.venue_short }}</div>
+        {% endif %}
+        <img src="{{ base_path }}{{ post.thumbnail }}" alt="Thumbnail" 
+            onerror="this.src='{{ base_path }}/images/default-pub.jpg'">
+        </div>
+        <div class="pub-content">
+        <div class="pub-title">{{ post.title }}</div>
+        <div class="pub-authors">{{ post.authors }}</div>
+        <div class="pub-venue">{{ post.venue }} {{ post.date | date: "%Y" }}</div>
+        <div class="pub-links">
+            {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
+            {% if post.html %}<a href="{{ post.html }}">HTML</a>{% endif %}
+            {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
+        </div>
+        </div>
     </div>
-    <div class="pub-content">
-      <div class="pub-title">{{ post.title }}</div>
-      <div class="pub-authors">{{ post.authors }}</div>
-      <div class="pub-venue">{{ post.venue }} {{ post.date | date: "%Y" }}</div>
-      <div class="pub-links">
-        {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
-        {% if post.html %}<a href="{{ post.html }}">HTML</a>{% endif %}
-        {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
-      </div>
-    </div>
-  </div>
-  {% endif %}
-{% endfor %}
+    {% endif %}
+    {% endfor %}
