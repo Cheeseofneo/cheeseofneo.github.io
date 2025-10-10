@@ -118,32 +118,41 @@ author_profile: true
 </style>
 
 {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
-{% assign years = sorted_pubs | map: 'date' | map: 'year' | uniq %}
+{% assign pub_years = "" | split: "" %}
 
-{% for year in years %}
-    {% assign year_string = year | date: "%Y" %}
-    <h2 class="year-header">{{ year_string }}</h2>
-    {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
-    {% for post in sorted_pubs %}
-    {% if post.date contains year_string %}
+{% for post in sorted_pubs %}
+  {% assign post_year = post.date | date: "%Y" %}
+  {% unless pub_years contains post_year %}
+    {% assign pub_years = pub_years | push: post_year %}
+  {% endunless %}
+{% endfor %}
+
+{% for year in pub_years %}
+  <h2 class="year-header">{{ year }}</h2>
+  
+  {% for post in sorted_pubs %}
+    {% assign post_year = post.date | date: "%Y" %}
+    {% if post_year == year %}
     <div class="publication-item">
-        <div class="pub-thumbnail" style="position: relative;">
+      <div class="pub-thumbnail">
         {% if post.venue_short %}
         <div class="pub-badge">{{ post.venue_short }}</div>
         {% endif %}
-        <img src="{{ base_path }}{{ post.thumbnail }}" alt="Thumbnail">
-        </div>
-        <div class="pub-content">
+        <img src="{{ base_path }}{{ post.thumbnail }}" 
+             alt="{{ post.title }}"
+             onerror="this.src='{{ base_path }}/images/default-pub.jpg'">
+      </div>
+      <div class="pub-content">
         <div class="pub-title">{{ post.title }}</div>
         <div class="pub-authors">{{ post.authors }}</div>
-        <div class="pub-venue">{{ post.venue }} {{ post.date | date: "%Y" }}</div>
+        <div class="pub-venue">{{ post.venue }} {{ year }}</div>
         <div class="pub-links">
-            {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
-            {% if post.html %}<a href="{{ post.html }}">HTML</a>{% endif %}
-            {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
+          {% if post.arxiv %}<a href="{{ post.arxiv }}">ARXIV</a>{% endif %}
+          {% if post.html %}<a href="{{ post.html }}">HTML</a>{% endif %}
+          {% if post.paperurl %}<a href="{{ post.paperurl }}">PDF</a>{% endif %}
         </div>
-        </div>
+      </div>
     </div>
     {% endif %}
-    {% endfor %}
+  {% endfor %}
 {% endfor %}
