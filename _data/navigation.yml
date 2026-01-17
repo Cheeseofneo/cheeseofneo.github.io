@@ -11,8 +11,17 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Projects"
-    url: /projects/
+  - title: "Blog"
+    url: /year-archive/
+    
+  - title: "CV"
+    url: /cv-download/
+
+  # - title: "CV"
+  #   url: /cv/
+
+  # - title: "Projects"
+  #   url: /projects/
 
   # - title: "Teaching"
   #   url: /teaching/    
@@ -20,12 +29,4 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
         
-  - title: "Blog"
-    url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
-  - title: "Download"
-    url: /cv-download/
     
