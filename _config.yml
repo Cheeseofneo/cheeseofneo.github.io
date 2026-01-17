@@ -87,13 +87,13 @@ publication_category:
     title: 'Conference Papers'
 
 # Projects Category
-project_category:
-  Research:
-    title: "Research"
-  Internship:
-    title: "Internship"
-  Competition:
-    title: "Competition"
+# project_category:
+#   Research:
+#     title: "Research"
+#   Internship:
+#     title: "Internship"
+#   Competition:
+#     title: "Competition"
 
 # Site Settings
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -227,7 +227,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   projects:
-    output: true
+    output: false
     permalink: /:collection/:path/
   teaching:
     output: false
