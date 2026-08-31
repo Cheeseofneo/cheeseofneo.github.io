@@ -188,6 +188,14 @@ img {
   background: var(--soft);
 }
 
+.config-error {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--soft);
+  color: var(--muted);
+}
+
 .publication-list {
   display: grid;
   gap: 22px;

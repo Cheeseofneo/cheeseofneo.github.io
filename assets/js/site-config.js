@@ -1,6 +1,5 @@
 (function () {
   const rootPath = document.currentScript.dataset.root || "";
-  const pageType = document.body.dataset.page;
 
   function toRootUrl(path) {
     if (!path || path.startsWith("http") || path.startsWith("mailto:")) {
@@ -166,7 +165,10 @@
     renderPublications(config, document.querySelector("[data-publications]"));
   }
 
-  loadConfig().then(function (config) {
+  function start() {
+    const pageType = document.body.dataset.page;
+
+    loadConfig().then(function (config) {
     if (pageType === "home") {
       renderHome(config);
     }
@@ -176,7 +178,17 @@
     if (pageType === "publications") {
       renderPublicationsPage(config);
     }
-  }).catch(function (error) {
-    console.error(error);
-  });
+    }).catch(function (error) {
+      console.error(error);
+      document.querySelectorAll("[data-about], [data-publications], [data-posts]").forEach(function (target) {
+        target.innerHTML = '<p class="config-error">Could not load <code>data/site.json</code>. Please preview the site through a local HTTP server instead of opening the HTML file directly.</p>';
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    window.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
 })();
