@@ -46,10 +46,9 @@
     "My research focuses on bridging Physics with modern Generative AI. Unlike pure deep learning approaches, I advocate for incorporating interpretable structures into the design of foundation models. My goal is to build generative systems that are not only high-quality but also physically consistent, theoretically interpretable, and computationally efficient."
   ],
   "researchInterests": [
-    "World Model","Ge",
-    "AIGC Applications: Digital human generation, video synthesis, and medical imaging."
+    "World Model","Physics-aware Generative AI","Music Generation"
   ],
-  "notice": "<strong>Open for opportunities:</strong> I am actively seeking Research Intern positions in Spring/Summer 2026 in Generative AI, Computer Vision, or Medical AI.",
+  "notice": "<strong>Open for opportunities:</strong> I am actively seeking Research Intern positions in Fall/Winter 2026 in Multi-modal Machine Learning and World Model.",
   "news": [
     {
       "date": "April 2026",

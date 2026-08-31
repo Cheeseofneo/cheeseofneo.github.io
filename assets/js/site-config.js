@@ -36,9 +36,16 @@
     const profile = config.profile;
     target.innerHTML = "";
 
+    const header = el("div", "profile-header");
     const name = el("a", "profile-name", profile.name);
     name.href = toRootUrl("index.html");
-    target.append(name);
+    header.append(name);
+
+    const button = el("button", "theme-toggle");
+    button.type = "button";
+    button.dataset.themeToggle = "";
+    header.append(button);
+    target.append(header);
 
     const avatar = el("img", "profile-photo");
     avatar.src = toRootUrl(profile.avatar);
@@ -57,11 +64,6 @@
       links.append(link);
     });
     target.append(links);
-
-    const button = el("button", "theme-toggle", "Dark");
-    button.type = "button";
-    button.dataset.themeToggle = "";
-    target.append(button);
 
     if (window.applyPreferredTheme) {
       window.applyPreferredTheme();
