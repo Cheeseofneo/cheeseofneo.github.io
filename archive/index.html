@@ -4,23 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog | WANG Zheng</title>
+    <script src="../assets/js/theme-toggle.js"></script>
+    <script src="../assets/js/site-config.js" data-root="../"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
   </head>
-  <body>
+  <body data-page="archive">
     <nav class="top-nav" aria-label="Primary navigation">
       <a href="../">Home</a>
       <a href="../publications/">Publications</a>
       <a href="../files/cv.pdf">CV</a>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
     </nav>
 
     <main class="page">
       <h1>Blog</h1>
-      <ol class="compact-list">
-        <li><time datetime="2025-10-09">2025.10</time><a href="../posts/2025/10/blog2/">Bugs Detector</a></li>
-        <li><time datetime="2025-10-07">2025.10</time><a href="../posts/2025/10/blog1/">Tutorial for Diffusion</a></li>
-        <li><time datetime="2025-09-21">2025.09</time><a href="../posts/2025/09/blog2/">Methods for consistent generation of long video</a></li>
-        <li><time datetime="2025-09-03">2025.09</time><a href="../posts/2025/09/blog1/">Mingw+VSCode 使用 matplotlibcpp 库</a></li>
-      </ol>
+      <ol class="compact-list" data-posts></ol>
     </main>
   </body>
 </html>

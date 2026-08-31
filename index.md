@@ -5,7 +5,7 @@ title: Home
 
 # About Me
 
-I am a Master student in Electrical Engineering at Tsinghua University, supervised by Prof. [Xiaohao Wang](https://www.researchgate.net/profile/Xiaohao-Wang-3). I also gained research experience at The University of Tokyo supervised by Prof. [Ken Takeuchi](https://scholar.google.com/citations?user=upWbWuAAAAAJ&hl=ja) and currently collaborate with researchers from HKUST.
+I am a PhD student in Dept. Creative Informatics  at Tsinghua University, supervised by Prof. [Xiaohao Wang](https://www.researchgate.net/profile/Xiaohao-Wang-3). I also gained research experience at The University of Tokyo supervised by Prof. [Ken Takeuchi](https://scholar.google.com/citations?user=upWbWuAAAAAJ&hl=ja) and currently collaborate with researchers from HKUST.
 
 My research focuses on bridging Signal Processing with modern Generative AI. Unlike pure deep learning approaches, I advocate for incorporating interpretable mathematical structures, such as Wavelet Theory, Sampling Theorems, and Inverse Problem formulations, into the design of foundation models. My goal is to build generative systems that are not only high-quality but also physically consistent, theoretically interpretable, and computationally efficient.
 

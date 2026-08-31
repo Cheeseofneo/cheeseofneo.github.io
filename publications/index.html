@@ -4,58 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Publications | WANG Zheng</title>
+    <script src="../assets/js/theme-toggle.js"></script>
+    <script src="../assets/js/site-config.js" data-root="../"></script>
     <link rel="stylesheet" href="../assets/css/main.css">
   </head>
-  <body>
+  <body data-page="publications">
     <nav class="top-nav" aria-label="Primary navigation">
       <a href="../">Home</a>
       <a href="../archive/">Blog</a>
       <a href="../files/cv.pdf">CV</a>
+      <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
     </nav>
 
     <main class="page">
       <h1>Publications</h1>
-      <p>You can also find my articles on <a href="https://scholar.google.com/citations?user=v2buxrUAAAAJ&amp;hl=en">Google Scholar</a>.</p>
-
-      <div class="publication-list">
-        <article class="publication-card">
-          <a class="publication-thumb" href="#" aria-label="VIVIDTALKER">
-            <img src="../images/vividtalker.png" alt="VIVIDTALKER">
-            <span>ICASSP</span>
-          </a>
-          <div class="publication-body">
-            <h3>VIVIDTALKER: A Modular Framework For Expressive 3D Talking Avatars With Controllable Gaze And Blink</h3>
-            <p class="publication-authors">Hangyu Xiong, Jinyi Zhang, Zheng Wang, Tianlun Pan, Qingzheng Hu</p>
-            <p class="publication-venue">ICASSP, 2026</p>
-          </div>
-        </article>
-
-        <article class="publication-card">
-          <a class="publication-thumb" href="https://arxiv.org/pdf/2501.03035" aria-label="Quantization meets reasoning">
-            <img src="../images/Quantization.png" alt="Quantization meets reasoning">
-            <span>arXiv</span>
-          </a>
-          <div class="publication-body">
-            <h3>Quantization meets reasoning: Exploring LLM low-bit quantization degradation for mathematical reasoning</h3>
-            <p class="publication-authors">Zhen Li, Yupeng Su, Runming Yang, Congkai Xie, Zheng Wang, Zhongwei Xie, Ngai Wong, Hongxia Yang</p>
-            <p class="publication-venue">arXiv preprint arXiv:2501.03035, 2025</p>
-            <p class="publication-links"><a href="https://arxiv.org/pdf/2501.03035">Paper</a></p>
-          </div>
-        </article>
-
-        <article class="publication-card">
-          <a class="publication-thumb" href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13241/132411T/A-fast-and-precise-autofocus-method-using-linear-array-CCD/10.1117/12.3036393.short" aria-label="A fast and precise autofocus method using linear array CCD">
-            <img src="../images/Autofocus.png" alt="A fast and precise autofocus method using linear array CCD">
-            <span>SPIE</span>
-          </a>
-          <div class="publication-body">
-            <h3>A fast and precise autofocus method using linear array CCD</h3>
-            <p class="publication-authors"><strong>Zheng Wang</strong>, Rui Ma, Chuang Zeng, Lifu Liu, Xinghui Li, Xiaohao Wang, Bo He</p>
-            <p class="publication-venue">SPIE Photonics, 2024</p>
-            <p class="publication-links"><a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13241/132411T/A-fast-and-precise-autofocus-method-using-linear-array-CCD/10.1117/12.3036393.short">SPIE</a></p>
-          </div>
-        </article>
-      </div>
+      <p>You can also find my articles on <a href="#" data-scholar>Google Scholar</a>.</p>
+      <div class="publication-list" data-publications></div>
     </main>
   </body>
 </html>
