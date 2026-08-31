@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Methods for consistent generation of long video | WANG Zheng</title>
+    <link rel="stylesheet" href="../../../../assets/css/main.css">
+  </head>
+  <body>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="../../../../">Home</a>
+      <a href="../../../../archive/">Blog</a>
+      <a href="../../../../publications/">Publications</a>
+    </nav>
+
+    <article class="page">
+      <p class="post-date">Sep 21, 2025</p>
+      <h1>Methods for consistent generation of long video</h1>
+
+      <p>对于长视频生成来说，目前对条件帧（历史帧）的利用主要分为：</p>
+      <ol>
+        <li>Sliding Window 的方法：StreamingT2V</li>
+        <li>选择的方法：
+          <ol>
+            <li>人工筛选关键镜头：LCT</li>
+            <li>启发式规则，例如相机 FOV：WORLDMEM、Context as Memory</li>
+            <li>利用上下文和生成帧特征来反应重要性（相似度）：Mixture of Context</li>
+          </ol>
+        </li>
+        <li>整体利用提取特征：
+          <ol>
+            <li>启发式规则，对远近上下文采用大小 Patch：FAR、FramePack</li>
+            <li>利用测试时训练使用网络来记忆上下文特征：VideoTTT</li>
+          </ol>
+        </li>
+      </ol>
+
+      <p>此外，通过总结一些全序列固定长度视频生成的方法，也得到一些启发，类似于 FullDiT2 单独使用一个模块来判断 kv 重要性来进行压缩、FreeLong 使用滤波器来综合高低频信息、StoryDiffusion 的 Batch 帧特征融合。</p>
+
+      <h2>Paper Review</h2>
+      <ul>
+        <li><strong>WorldMem:</strong> 对条件帧利用 FOV 进行筛选并作为 Key-Value，生成帧作为 Query 提取条件。Motivation: 有限的上下文时序窗口会限制生成长视频的时序一致性，尤其是保持 3D 空间结构方面，简单添加上下文窗口会导致显存和计算不高效。</li>
+        <li><strong>LoViC:</strong> 使用多个复制的 learnable tokens 通过自注意力机制来提取上下文特征，通过与去噪帧拼接计算自注意力机制来融合。Motivation: DiT 注意力的平方复杂度；使用类似 Q-Former 的结构来提取上下文信息时，交叉注意力层难以兼容 RoPE，固定长度的可学习 query 也会导致对更长上下文捕捉不好。</li>
+        <li><strong>LCT:</strong> 人工筛选条件帧，拼接条件帧和生成帧，利用全注意力机制生成多镜头视频。Motivation: 使用单场景生成模型生成多场景视频时，外观条件的方法无法保持光照色彩等一致性，关键帧生成方法无法保证跨场景一致性。</li>
+      </ul>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+
+<div class="publication-list">
+  {% for pub in sorted_pubs %}
+    <article class="publication-card">
+      {% if pub.thumbnail %}
+        <a class="publication-thumb" href="{{ pub.url | relative_url }}" aria-label="{{ pub.title }}">
+          <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.title }}">
+          {% if pub.venue_short %}
+            <span>{{ pub.venue_short }}</span>
+          {% endif %}
+        </a>
+      {% endif %}
+
+      <div class="publication-body">
+        <h3>{{ pub.title }}</h3>
+        {% if pub.authors %}
+          <p class="publication-authors">{{ pub.authors }}</p>
+        {% endif %}
+        {% if pub.venue %}
+          <p class="publication-venue">{{ pub.venue }}{% if pub.date %}, {{ pub.date | date: "%Y" }}{% endif %}</p>
+        {% elsif pub.date %}
+          <p class="publication-venue">{{ pub.date | date: "%Y" }}</p>
+        {% endif %}
+        <p class="publication-links">
+          {% if pub.arxiv %}
+            <a href="{{ pub.arxiv }}">Paper</a>
+          {% endif %}
+          {% if pub.paperurl %}
+            <a href="{{ pub.paperurl }}">PDF</a>
+          {% endif %}
+          {% if pub.SPIE %}
+            <a href="{{ pub.SPIE }}">SPIE</a>
+          {% endif %}
+          {% if pub.html %}
+            <a href="{{ pub.html }}">HTML</a>
+          {% endif %}
+        </p>
+      </div>
+    </article>
+  {% endfor %}
+</div>

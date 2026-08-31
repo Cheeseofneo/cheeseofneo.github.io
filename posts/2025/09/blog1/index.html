@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mingw+VSCode 使用 matplotlibcpp 库 | WANG Zheng</title>
+    <link rel="stylesheet" href="../../../../assets/css/main.css">
+  </head>
+  <body>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="../../../../">Home</a>
+      <a href="../../../../archive/">Blog</a>
+      <a href="../../../../publications/">Publications</a>
+    </nav>
+
+    <article class="page">
+      <p class="post-date">Sep 3, 2025</p>
+      <h1>Mingw+VSCode 使用 matplotlibcpp 库</h1>
+
+      <h2>背景</h2>
+      <p>在 C++ 中常需要处理数据并进行可视化，而标准库中并没有提供绘图的工具，因此需要借助外部库来完成。目前来看 matplotlibcpp 实现较为容易，因为是调用 Python 库的 API 来完成的。本文讲述使用 VSCode + Mingw 的 C++ 开发环境下如何使用 Matplotlib 库。</p>
+
+      <h2>实现</h2>
+      <h3>1. VSCode 和 Mingw 的安装</h3>
+      <p>参考其他博客。</p>
+
+      <h3>2. 配置 C++ 开发环境后安装 Vcpkg</h3>
+      <p>vcpkg 是一个开源的多系统兼容 C/C++ 库管理工具，一般作为 CMake 的子模块使用。使用以下命令安装项目所需要的库：</p>
+      <blockquote>.\vcpkg\vcpkg install [packages to install]</blockquote>
+
+      <p>Windows 中 vcpkg 默认编译并安装 x86 版本的库。若要编译并安装 x64 版本，请执行：</p>
+      <blockquote>.\vcpkg\vcpkg install [package name]:x64-windows</blockquote>
+      <p>或：</p>
+      <blockquote>.\vcpkg\vcpkg install [packages to install] --triplet=x64-windows</blockquote>
+
+      <p>也可以使用 search 子命令来查找 vcpkg 中集成的库：</p>
+      <blockquote>.\vcpkg\vcpkg search [search term]</blockquote>
+
+      <h3>在 Visual Studio Code 中使用 vcpkg</h3>
+      <p>将以下内容添加到工作区的 <code>settings.json</code> 中，可以使 CMake Tools 自动使用 vcpkg 中的第三方库：</p>
+      <pre><code>{
+  "cmake.configureSettings": {
+    "CMAKE_TOOLCHAIN_FILE": "[vcpkg root]/scripts/buildsystems/vcpkg.cmake"
+  }
+}</code></pre>
+
+      <p>如果不使用 CMake，需要将 vcpkg 链接至 VSCode：</p>
+      <ol>
+        <li>在 <code>c_cpp_properties.json</code> 中的 <code>includePath</code> 中添加 <code>${vcpkgRoot}/x64-windows/include</code></li>
+        <li>在 <code>task.json</code> 的 <code>args</code> 最后添加 vcpkg 的 include 路径，例如 <code>-I E:/vcpkg/installed/x64-windows/include</code></li>
+      </ol>
+
+      <h3>3. Python 环境的搭建</h3>
+      <p>由于 matplotlibcpp 是间接引用 matplotlib 的 Python 库，因此需要安装 Python 环境。可以是独立 Python 环境、Anaconda 虚拟环境或默认环境，最好使用 Python 3。可以用 <code>which python</code> 检查系统的 Python 环境。</p>
+
+      <p>Python 环境搭建完成后：</p>
+      <ul>
+        <li>在 <code>c_cpp_properties.json</code> 中添加 Python 和 NumPy 的 include 路径。</li>
+        <li>在 <code>task.json</code> 中添加 Python 和 NumPy 的 include 路径、Python 库路径以及 Python 链接参数。</li>
+      </ul>
+
+      <h3>4. 使用 Mingw 编译 matplotlibcpp</h3>
+      <p>在使用 matplotlibcpp 的过程中，出现过如下错误：</p>
+      <blockquote>undefined reference to `std::ios_base::Init::Init()`</blockquote>
+      <p>解决方案是使用 g++ 编译：</p>
+      <blockquote>g++ = gcc -xc++ -lstdc++ -shared-libgcc</blockquote>
+
+      <p>随后出现核心错误：</p>
+      <blockquote>Fatal Python error: Py_Initialize: unable to load the file system codec<br>LookupError: no codec search functions registered: can't find encoding</blockquote>
+
+      <p>这个问题困扰了很久。后来发现在 debug 的过程中，<code>PYTHONHOME</code> 一直为 Mingw 下的 Python 2.7 路径，导致无法使用 Python 3。通过在 <code>main</code> 函数开始添加以下语句，创建 Python 虚拟机，解决了该问题。</p>
+      <pre><code>Py_SetPythonHome(L"D:\\python39");
+Py_Initialize();</code></pre>
+
+      <h2>扩展</h2>
+      <p>在 C++ 中调用 Python 脚本：</p>
+      <pre><code>Py_SetPythonHome(L"D:\\python39");
+Py_Initialize();
+PyRun_SimpleString("import test");
+PyRun_SimpleString("print('hello')");
+Py_Finalize();
+system("Pause");
+return 0;</code></pre>
+    </article>
+  </body>
+</html>
