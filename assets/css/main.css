@@ -119,6 +119,15 @@ img {
   font-size: 0.95rem;
 }
 
+.profile-tagline {
+  max-width: 240px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-family: "Segoe Script", "Snell Roundhand", "Brush Script MT", cursive;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
 .profile-role {
   color: var(--text);
   font-weight: 600;
@@ -126,9 +135,35 @@ img {
 
 .profile-links {
   display: grid;
-  gap: 7px;
+  gap: 8px;
   margin-top: 20px;
   font-size: 0.95rem;
+}
+
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+}
+
+.profile-link-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  color: var(--muted);
+}
+
+.profile-link-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-link:hover .profile-link-icon,
+.profile-link:focus .profile-link-icon {
+  color: var(--link-hover);
 }
 
 .theme-toggle {

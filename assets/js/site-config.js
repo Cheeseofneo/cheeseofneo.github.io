@@ -19,6 +19,31 @@
     return node;
   }
 
+  function profileIcon(item) {
+    const key = (item.label + " " + item.url).toLowerCase();
+    let paths;
+
+    if (key.includes("mail")) {
+      paths = '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>';
+    } else if (key.includes("scholar")) {
+      paths = '<path d="m3 10 9-5 9 5-9 5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/>';
+    } else if (key.includes("github")) {
+      paths = '<path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.28-.36 6.72-1.61 6.72-7.25A5.65 5.65 0 0 0 19.22 3.3 5.44 5.44 0 0 0 19.08 0S17.9-.38 15 1.48a13.38 13.38 0 0 0-7 0C5.1-.38 3.92 0 3.92 0a5.44 5.44 0 0 0-.14 3.3 5.65 5.65 0 0 0-1.5 3.95c0 5.63 3.44 6.88 6.72 7.25A4.8 4.8 0 0 0 8 18v4"/><path d="M8 19c-3 .92-3-1.5-4-2"/>';
+    } else if (key.includes("linkedin")) {
+      paths = '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>';
+    } else if (key.includes("cv") || key.includes("resume")) {
+      paths = '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5Z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8M8 17h8"/>';
+    } else if (key.includes("blog")) {
+      paths = '<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2h5a3 3 0 0 1 3 3v15a3 3 0 0 0-3-3Z"/><path d="M21 18a1 1 0 0 0 1-1V5a2 2 0 0 0-2-2h-5a3 3 0 0 0-3 3v15a3 3 0 0 1 3-3Z"/>';
+    } else if (key.includes("publication")) {
+      paths = '<path d="M16 6 4 20"/><path d="M8 6h8v8"/><path d="M4 4h6M4 9h3M4 14h2M14 20h6"/>';
+    } else {
+      paths = '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>';
+    }
+
+    return '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + paths + '</svg>';
+  }
+
   async function loadConfig() {
     const response = await fetch(rootPath + "data/site.json");
     if (!response.ok) {
@@ -52,6 +77,10 @@
     avatar.alt = profile.name;
     target.append(avatar);
 
+    if (profile.tagline) {
+      target.append(el("p", "profile-tagline", profile.tagline));
+    }
+
     target.append(el("p", "profile-role", profile.role));
     target.append(el("p", "profile-affiliation", profile.affiliation));
     target.append(el("p", "profile-location", profile.location));
@@ -59,8 +88,10 @@
     const links = el("nav", "profile-links");
     links.setAttribute("aria-label", "Profile links");
     profile.links.forEach(function (item) {
-      const link = el("a", "", item.label);
+      const link = el("a", "profile-link");
       link.href = toRootUrl(item.url);
+      link.append(el("span", "profile-link-icon", profileIcon(item)));
+      link.append(el("span", "profile-link-label", item.label));
       links.append(link);
     });
     target.append(links);
