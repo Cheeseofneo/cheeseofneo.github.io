@@ -35,11 +35,11 @@
       },
       {
         "label": "Blog",
-        "url": "archive/"
+        "url": "index.html#blog"
       },
       {
         "label": "Publications",
-        "url": "publications/"
+        "url": "index.html#publications"
       }
     ]
   },

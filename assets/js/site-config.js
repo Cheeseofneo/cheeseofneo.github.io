@@ -118,15 +118,15 @@
     }
   }
 
-  function renderPublications(config, target, options) {
-    const publications = options && options.limit ? config.publications.slice(0, options.limit) : config.publications;
+  function renderPublications(config, target) {
+    const publications = config.publications;
     target.innerHTML = "";
 
     publications.forEach(function (publication) {
       const article = el("article", "publication-card");
 
       const thumb = el("a", "publication-thumb");
-      thumb.href = publication.links && publication.links[0] ? publication.links[0].url : toRootUrl("publications/");
+      thumb.href = publication.links && publication.links[0] ? publication.links[0].url : toRootUrl("index.html#publications");
       thumb.setAttribute("aria-label", publication.title);
 
       const image = el("img");
@@ -159,8 +159,8 @@
     });
   }
 
-  function renderPostList(config, target, options) {
-    const posts = options && options.limit ? config.posts.slice(0, options.limit) : config.posts;
+  function renderPostList(config, target) {
+    const posts = config.posts;
     target.innerHTML = "";
 
     posts.forEach(function (post) {
@@ -196,23 +196,8 @@
       return "<li><strong>" + item.date + ":</strong> " + item.text + "</li>";
     }).join("");
 
-    renderPublications(config, document.querySelector("[data-publications]"), { limit: 3 });
-    renderPostList(config, document.querySelector("[data-posts]"), { limit: 5 });
-  }
-
-  function renderArchive(config) {
-    renderPostList(config, document.querySelector("[data-posts]"));
-  }
-
-  function renderPublicationsPage(config) {
-    const scholar = document.querySelector("[data-scholar]");
-    const scholarLink = config.profile.links.find(function (link) {
-      return link.label === "Google Scholar";
-    });
-    if (scholarLink) {
-      scholar.href = scholarLink.url;
-    }
     renderPublications(config, document.querySelector("[data-publications]"));
+    renderPostList(config, document.querySelector("[data-posts]"));
   }
 
   function start() {
@@ -222,12 +207,6 @@
     applySiteSettings(config);
     if (pageType === "home") {
       renderHome(config);
-    }
-    if (pageType === "archive") {
-      renderArchive(config);
-    }
-    if (pageType === "publications") {
-      renderPublicationsPage(config);
     }
     }).catch(function (error) {
       console.error(error);
