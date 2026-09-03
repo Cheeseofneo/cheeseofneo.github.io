@@ -2,6 +2,7 @@
   "site": {
     "title": "Neo Wang",
     "description": "Neo Wang's academic homepage.",
+    "icon": "images/icon.png",
     "language": "en-US"
   },
   "profile": {
@@ -10,7 +11,7 @@
     "role": "CS PhD",
     "affiliation": "University of Tokyo",
     "location": "Japan, Tokyo",
-    "avatar": "images/1.jpg",
+    "avatar": "images/avatar.jpg",
     "links": [
       {
         "label": "Email",
@@ -57,6 +58,15 @@
     }
   ],
   "publications": [
+    {
+      "title": "VIVIDTALKER: A Modular Framework For Expressive 3D Talking Avatars With Controllable Gaze And Blink",
+      "authors": "Hangyu Xiong*,Zheng Wang*, Tianlun Pan, Guozhan Qiu, Longze Fan",
+      "venue": "Under review",
+      "year": "2026",
+      "badge": "Under review",
+      "image": "images/liveecho.pdf",
+      "links": []
+    },
     {
       "title": "VIVIDTALKER: A Modular Framework For Expressive 3D Talking Avatars With Controllable Gaze And Blink",
       "authors": "Hangyu Xiong, Jinyi Zhang, Zheng Wang, Tianlun Pan, Qingzheng Hu",

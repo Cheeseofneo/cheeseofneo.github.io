@@ -52,6 +52,23 @@
     return response.json();
   }
 
+  function applySiteSettings(config) {
+    if (config.site.language) {
+      document.documentElement.lang = config.site.language;
+    }
+
+    if (config.site.icon) {
+      let icon = document.querySelector("link[rel='icon']");
+      if (!icon) {
+        icon = document.createElement("link");
+        icon.rel = "icon";
+        document.head.append(icon);
+      }
+      icon.type = "image/png";
+      icon.href = toRootUrl(config.site.icon);
+    }
+  }
+
   function renderProfile(config) {
     const target = document.querySelector("[data-profile]");
     if (!target) {
@@ -202,6 +219,7 @@
     const pageType = document.body.dataset.page;
 
     loadConfig().then(function (config) {
+    applySiteSettings(config);
     if (pageType === "home") {
       renderHome(config);
     }
