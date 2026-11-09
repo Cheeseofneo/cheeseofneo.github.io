@@ -159,6 +159,31 @@
     });
   }
 
+  function renderService(config, target) {
+    if (!target) {
+      return;
+    }
+    target.innerHTML = "";
+
+    const service = config.service || [];
+    if (!service.length) {
+      target.append(el("li", "", "TBD"));
+      return;
+    }
+
+    service.forEach(function (entry) {
+      const item = el("li");
+      const venue = el("strong");
+      venue.textContent = entry.venue;
+      item.append(venue);
+      if (entry.year) {
+        item.append(document.createTextNode(" " + entry.year));
+      }
+      item.append(document.createTextNode(" — " + (entry.role || "Reviewer")));
+      target.append(item);
+    });
+  }
+
   function renderPostList(config, target) {
     const posts = config.posts;
     target.innerHTML = "";
@@ -197,6 +222,7 @@
     }).join("");
 
     renderPublications(config, document.querySelector("[data-publications]"));
+    renderService(config, document.querySelector("[data-service]"));
     renderPostList(config, document.querySelector("[data-posts]"));
   }
 
@@ -210,7 +236,7 @@
     }
     }).catch(function (error) {
       console.error(error);
-      document.querySelectorAll("[data-about], [data-publications], [data-posts]").forEach(function (target) {
+      document.querySelectorAll("[data-about], [data-publications], [data-service], [data-posts]").forEach(function (target) {
         target.innerHTML = '<p class="config-error">Could not load <code>data/site.json</code>. Please preview the site through a local HTTP server instead of opening the HTML file directly.</p>';
       });
     });
