@@ -163,25 +163,7 @@
     if (!target) {
       return;
     }
-    target.innerHTML = "";
-
-    const service = config.service || [];
-    if (!service.length) {
-      target.append(el("li", "", "TBD"));
-      return;
-    }
-
-    service.forEach(function (entry) {
-      const item = el("li");
-      const venue = el("strong");
-      venue.textContent = entry.venue;
-      item.append(venue);
-      if (entry.year) {
-        item.append(document.createTextNode(" " + entry.year));
-      }
-      item.append(document.createTextNode(" — " + (entry.role || "Reviewer")));
-      target.append(item);
-    });
+    target.textContent = config.service || "TBD";
   }
 
   function renderPostList(config, target) {
